@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    Animator animator;
+    [SerializeField] private GameObject Collider;
+
+    private void Awake()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Punch_1()
     {
-        
+        animator.SetTrigger("Punch_1");
     }
-
     void Attack()
     {
+        Collider.SetActive(true);
         Debug.Log("atk");
     }
 }
