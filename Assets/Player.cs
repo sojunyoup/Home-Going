@@ -5,7 +5,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     Animator animator;
-    [SerializeField] private GameObject Collider;
+    [SerializeField] private GameObject Coll_Punch_1;
+    [SerializeField] private GameObject Coll_Kick_1;
+    [SerializeField] private GameObject Fire1;
 
     private void Awake()
     {
@@ -16,9 +18,23 @@ public class Player : MonoBehaviour
     {
         animator.SetTrigger("Punch_1");
     }
-    void Attack()
+    public void Kick_1()
     {
-        Collider.SetActive(true);
-        Debug.Log("atk");
+        animator.SetTrigger("Kick_1");
+    }
+
+    public void Fire_1()
+    {
+        animator.SetTrigger("Fire_1");
+        Fire1.SetActive(true);
+    }
+
+    void ATK_Punch_1()
+    {
+        Coll_Punch_1.SetActive(true);
+    }
+    void ATK_Kick_1()
+    {
+        Coll_Kick_1.SetActive(true);
     }
 }
