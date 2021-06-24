@@ -7,6 +7,7 @@ public class Obstacle_Rock : MonoBehaviour
     float fShaketime = 0;
     float fShakeScale = 0;
 
+
     Vector2 initialPosition;
 
     private void Start()
@@ -31,6 +32,6 @@ public class Obstacle_Rock : MonoBehaviour
     {
         fShaketime = 0.05f;
         fShakeScale = 0.05f;
-        Debug.Log("악");
+        
     }
 }
