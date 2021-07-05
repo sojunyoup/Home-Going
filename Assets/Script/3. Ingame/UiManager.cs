@@ -20,17 +20,7 @@ public class UiManager : MonoBehaviour
     public Sprite SoundEOn;
     public Sprite SoundEOff;
     bool isSoundE = true;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     //일시정지 ui
     public void OnClickSound()
     {
