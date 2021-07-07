@@ -18,7 +18,8 @@ public class ClearSkill : MonoBehaviour, IPointerClickHandler
         {
             if (SkillNum == 5)
             {
-                GameManager.Instance.name[SkillNum] = null;
+                GameManager.Instance.name[SkillNum] = SKillName.NONE;
+                GameManager.Instance.CoolTime[SkillNum] = 0;
             }
             else
             {
@@ -27,7 +28,8 @@ public class ClearSkill : MonoBehaviour, IPointerClickHandler
                     GameManager.Instance.name[i] = GameManager.Instance.name[i + 1];
                     if (i >= GameManager.Instance.nameNum - 2)
                     {
-                        GameManager.Instance.name[i + 1] = null;
+                        GameManager.Instance.name[i + 1] = SKillName.NONE;
+                        GameManager.Instance.CoolTime[i + 1] = 0;
                     }
                 }
             }
@@ -41,14 +43,15 @@ public class ClearSkill : MonoBehaviour, IPointerClickHandler
     {
         for (int j = 0; j < GameManager.Instance.Result.Count; j++)
         {
-            if (GameManager.Instance.name[SkillNum] == GameManager.Instance.Result[j].skillName)
-            {
-                gameObject.GetComponent<Image>().sprite = GameManager.Instance.Result[j].skillImage;
-            }
-            if(GameManager.Instance.name[SkillNum] == null)
+            if (GameManager.Instance.name[SkillNum] == SKillName.NONE)
             {
                 gameObject.GetComponent<Image>().sprite = first;
             }
+            else if (GameManager.Instance.name[SkillNum] == GameManager.Instance.Result[j].skillName)
+            {
+                gameObject.GetComponent<Image>().sprite = GameManager.Instance.Result[j].skillImage;
+            }
+            
         }
     }
 }

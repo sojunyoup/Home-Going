@@ -208,8 +208,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 2
+  Cooltime: 0
   SkillNum: 2
 --- !u!1 &5356168
 GameObject:
@@ -298,8 +299,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 3
+  Cooltime: 0
   SkillNum: 6
 --- !u!1 &10845250
 GameObject:
@@ -330,7 +332,8 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 190451562}
   m_Father: {fileID: 408245826}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -517,9 +520,88 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 4
+  Cooltime: 0
   SkillNum: 3
+--- !u!1 &190451561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 190451562}
+  - component: {fileID: 190451564}
+  - component: {fileID: 190451563}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &190451562
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190451561}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 10845251}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 16, y: -187}
+  m_SizeDelta: {x: 200, y: 60}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &190451563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190451561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 80
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 100
+--- !u!222 &190451564
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190451561}
+  m_CullTransparentMesh: 0
 --- !u!1 &233639052
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,8 +689,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 4
+  Cooltime: 0
   SkillNum: 2
 --- !u!1 &262678527
 GameObject:
@@ -697,8 +780,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 3
+  Cooltime: 0
   SkillNum: 0
 --- !u!1 &277758430
 GameObject:
@@ -787,8 +871,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 2
+  Cooltime: 0
   SkillNum: 1
 --- !u!1 &326554852
 GameObject:
@@ -1115,8 +1200,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 3
+  Cooltime: 0
   SkillNum: 4
 --- !u!1 &354637626
 GameObject:
@@ -1148,66 +1234,80 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SkillBuyUi: {fileID: 1266043973}
+  GoldUI: {fileID: 525579578}
+  SkillBuyImage: {fileID: 333966475}
   deck:
-  - skillName: 1
-    skillImage: {fileID: 21300000, guid: c1f098c9c25a5ec4d801097148d25bb4, type: 3}
+  - skillName: 0
+    skillImage: {fileID: 21300000, guid: db95016f08d590e4b849fae4691fad05, type: 3}
     skillGrade: 0
     weight: 40
+    Cool: 5
     isTrue: 0
-  - skillName: 2
-    skillImage: {fileID: 21300000, guid: c1f098c9c25a5ec4d801097148d25bb4, type: 3}
+  - skillName: 1
+    skillImage: {fileID: 21300000, guid: 53576ac06162ed4459374f78544936f5, type: 3}
     skillGrade: 0
     weight: 40
+    Cool: 6
     isTrue: 0
   - skillName: 3
-    skillImage: {fileID: 21300000, guid: c1f098c9c25a5ec4d801097148d25bb4, type: 3}
+    skillImage: {fileID: 21300000, guid: a8266d5bf469e564eb4ac14f4a9746f7, type: 3}
     skillGrade: 0
     weight: 40
+    Cool: 5
     isTrue: 0
   - skillName: 4
-    skillImage: {fileID: 21300000, guid: c1f098c9c25a5ec4d801097148d25bb4, type: 3}
+    skillImage: {fileID: 21300000, guid: 22b0f0b1b0de7df47b59305408bd958c, type: 3}
     skillGrade: 0
     weight: 40
+    Cool: 6
+    isTrue: 0
+  - skillName: 2
+    skillImage: {fileID: 21300000, guid: d09a3212c9a847244bc35dcd863d4000, type: 3}
+    skillGrade: 1
+    weight: 10
+    Cool: 7
     isTrue: 0
   - skillName: 5
-    skillImage: {fileID: 21300000, guid: e8853eb56d3bdbc42a9965a0e65a54ed, type: 3}
+    skillImage: {fileID: 21300000, guid: 421594bac6f453b4ca92c088663ea1f1, type: 3}
     skillGrade: 1
-    weight: 30
-    isTrue: 0
-  - skillName: 6
-    skillImage: {fileID: 21300000, guid: e8853eb56d3bdbc42a9965a0e65a54ed, type: 3}
-    skillGrade: 1
-    weight: 30
-    isTrue: 0
-  - skillName: 7
-    skillImage: {fileID: 21300000, guid: e8853eb56d3bdbc42a9965a0e65a54ed, type: 3}
-    skillGrade: 1
-    weight: 30
-    isTrue: 0
-  - skillName: 8
-    skillImage: {fileID: 21300000, guid: 578ae1c9078fbb64a8d9b62b054f6f5c, type: 3}
-    skillGrade: 2
-    weight: 20
-    isTrue: 0
-  - skillName: 9
-    skillImage: {fileID: 21300000, guid: 578ae1c9078fbb64a8d9b62b054f6f5c, type: 3}
-    skillGrade: 2
-    weight: 20
-    isTrue: 0
-  - skillName: 10
-    skillImage: {fileID: 21300000, guid: 578ae1c9078fbb64a8d9b62b054f6f5c, type: 3}
-    skillGrade: 2
-    weight: 20
+    weight: 10
+    Cool: 7
     isTrue: 0
   - skillName: 11
-    skillImage: {fileID: 21300000, guid: 892bbdffa6e18a04a808cf5fbe424c0a, type: 3}
+    skillImage: {fileID: 21300000, guid: a84b7664df5e8544fa84e2c09b102213, type: 3}
     skillGrade: 3
-    weight: 10
+    weight: 1
+    Cool: 600
     isTrue: 0
-  - skillName: 12
+  - skillName: 6
+    skillImage: {fileID: 21300000, guid: 084130c73a3f06546b08f19164eaba29, type: 3}
+    skillGrade: 2
+    weight: 5
+    Cool: 12
+    isTrue: 0
+  - skillName: 7
+    skillImage: {fileID: 21300000, guid: 0fc1e26b151b5f444823d37eb4688636, type: 3}
+    skillGrade: 2
+    weight: 5
+    Cool: 12
+    isTrue: 0
+  - skillName: 8
+    skillImage: {fileID: 21300000, guid: f4a66973159ea6b4e824fc0a27914de7, type: 3}
+    skillGrade: 2
+    weight: 5
+    Cool: 12
+    isTrue: 0
+  - skillName: 10
     skillImage: {fileID: 21300000, guid: 892bbdffa6e18a04a808cf5fbe424c0a, type: 3}
     skillGrade: 3
-    weight: 10
+    weight: 1
+    Cool: 20
+    isTrue: 0
+  - skillName: 9
+    skillImage: {fileID: 21300000, guid: 928d6f06bcb45ac4db2ae02c9a5a073f, type: 3}
+    skillGrade: 3
+    weight: 1
+    Cool: 20
     isTrue: 0
   total: 1
   nomal:
@@ -1459,7 +1559,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1599.9999, y: -0.000023443556}
+  m_AnchoredPosition: {x: -1600, y: -0.000023443556}
   m_SizeDelta: {x: 2967.08, y: 222.42}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &417657013
@@ -1585,8 +1685,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 4
+  Cooltime: 0
   SkillNum: 5
 --- !u!1 &457788652
 GameObject:
@@ -1855,9 +1956,88 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 1
+  Cooltime: 0
   SkillNum: 7
+--- !u!1 &525579576
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 525579577}
+  - component: {fileID: 525579579}
+  - component: {fileID: 525579578}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &525579577
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525579576}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1233695636}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 25.5, y: 7.5}
+  m_SizeDelta: {x: 172.42, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &525579578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525579576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 9
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 1
+    m_MaxSize: 80
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 10
+--- !u!222 &525579579
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525579576}
+  m_CullTransparentMesh: 0
 --- !u!1 &529331585
 GameObject:
   m_ObjectHideFlags: 0
@@ -2033,8 +2213,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 1
+  Cooltime: 0
   SkillNum: 5
 --- !u!1 &560848320
 GameObject:
@@ -2323,8 +2504,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 4
+  Cooltime: 0
   SkillNum: 4
 --- !u!1 &606816313
 GameObject:
@@ -2413,8 +2595,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 4
+  Cooltime: 0
   SkillNum: 1
 --- !u!1 &618196649
 GameObject:
@@ -2503,8 +2686,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 3
+  Cooltime: 0
   SkillNum: 2
 --- !u!1 &618821056
 GameObject:
@@ -2784,8 +2968,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 619027537}
   m_HandleRect: {fileID: 619027536}
   m_Direction: 0
-  m_Value: -0.00000008929271
-  m_Size: 0.18235195
+  m_Value: 0
+  m_Size: 0.5391574
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3090,8 +3274,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 4
+  Cooltime: 0
   SkillNum: 0
 --- !u!1 &1057455001
 GameObject:
@@ -3263,8 +3448,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 1
+  Cooltime: 0
   SkillNum: 1
 --- !u!1 &1200869161
 GameObject:
@@ -3428,8 +3614,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 4
+  Cooltime: 0
   SkillNum: 7
 --- !u!1 &1233695635
 GameObject:
@@ -3459,7 +3646,8 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 525579577}
   m_Father: {fileID: 457788656}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3894,8 +4082,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 3
+  Cooltime: 0
   SkillNum: 5
 --- !u!1 &1485695454
 GameObject:
@@ -3931,14 +4120,14 @@ MonoBehaviour:
   unique: 0
   legendary: 0
   Result: []
-  name:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  name: 0c0000000c0000000c0000000c0000000c0000000c000000
+  CoolTime: 000000000000000000000000000000000000000000000000
   nameNum: 0
+  Stage: 1
+  Gold: 0
+  BasicSkill: 0
+  Result_Window: 0
+  skillActive: 0
 --- !u!4 &1485695456
 Transform:
   m_ObjectHideFlags: 0
@@ -4040,8 +4229,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 3
+  Cooltime: 0
   SkillNum: 7
 --- !u!1 &1516978526
 GameObject:
@@ -4130,8 +4320,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 4
+  Cooltime: 0
   SkillNum: 6
 --- !u!1 &1534173883
 GameObject:
@@ -4327,8 +4518,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 2
+  Cooltime: 0
   SkillNum: 6
 --- !u!1 &1558179894
 GameObject:
@@ -4505,8 +4697,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 2
+  Cooltime: 0
   SkillNum: 5
 --- !u!1 &1599310063
 GameObject:
@@ -4595,8 +4788,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 2
+  Cooltime: 0
   SkillNum: 4
 --- !u!1 &1623189629
 GameObject:
@@ -4960,8 +5154,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 3
+  Cooltime: 0
   SkillNum: 1
 --- !u!1 &1711412152
 GameObject:
@@ -5050,8 +5245,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 2
+  Cooltime: 0
   SkillNum: 3
 --- !u!1 &1770821762
 GameObject:
@@ -5248,8 +5444,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 3
+  Cooltime: 0
   SkillNum: 3
 --- !u!1 &1806117461
 GameObject:
@@ -5338,8 +5535,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 1
+  Cooltime: 0
   SkillNum: 0
 --- !u!1 &1813986976
 GameObject:
@@ -5428,8 +5626,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 1
+  Cooltime: 0
   SkillNum: 6
 --- !u!1 &1816538405
 GameObject:
@@ -5518,8 +5717,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 2
+  Cooltime: 0
   SkillNum: 0
 --- !u!1 &1858817473
 GameObject:
@@ -5771,8 +5971,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 1
+  Cooltime: 0
   SkillNum: 3
 --- !u!1 &1935017798
 GameObject:
@@ -5861,8 +6062,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 2
+  Cooltime: 0
   SkillNum: 7
 --- !u!1 &1990147765
 GameObject:
@@ -5951,8 +6153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 1
+  Cooltime: 0
   SkillNum: 2
 --- !u!1 &2005209173
 GameObject:
@@ -6041,8 +6244,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca9a9823f437147a94f9c0171eae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillNamae: 
+  SkillName: 0
   Grade: 1
+  Cooltime: 0
   SkillNum: 4
 --- !u!1 &2045325012
 GameObject:

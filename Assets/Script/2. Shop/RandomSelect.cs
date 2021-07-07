@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class RandomSelect : MonoBehaviour
 {
     public GameObject SkillBuyUi;
+    public Text GoldUI;
+    public Image SkillBuyImage;
     public List<Skill> deck = new List<Skill>();
     public int total = 0;
 
@@ -31,50 +33,79 @@ public class RandomSelect : MonoBehaviour
         uniqueNum = 0;
         legendaryNum = 0;
 
+        if (!GameManager.Instance.BasicSkill)
+        {
+            GameManager.Instance.Result.Add(new Skill(deck[0]));
+            GameManager.Instance.Result.Add(new Skill(deck[2]));
+            GameManager.Instance.BasicSkill = true;
+        }
+
         for (int i = 0; i < deck.Count; i++)
         {
             total += deck[i].weight;
+
             for(int j = 0; j < GameManager.Instance.Result.Count; j++)
             {
                 if(GameManager.Instance.Result[j].skillName == deck[i].skillName)
                 {
                     deck[i].isTrue = true;
+
                     if (deck[i].skillGrade == SkillGrade.NOMAL && deck[i].isTrue == true)
                     {
                         nomal[nomalNum].sprite = deck[i].skillImage;
                         nomalImage[nomalNum].gameObject.tag = "InSkill";
-                        nomalImage[nomalNum].GetComponent<DragDrop>().SkillNamae = deck[i].skillName;
+                        nomalImage[nomalNum].GetComponent<DragDrop>().SkillName = deck[i].skillName;
+                        nomalImage[nomalNum].GetComponent<DragDrop>().Cooltime = deck[i].Cool;
                         nomalNum++;
                     }
                     else if (deck[i].skillGrade == SkillGrade.EPIC && deck[i].isTrue == true)
                     {
                         epic[epicNum].sprite = deck[i].skillImage;
                         epicImage[epicNum].gameObject.tag = "InSkill";
-                        epicImage[epicNum].GetComponent<DragDrop>().SkillNamae = deck[i].skillName;
+                        epicImage[epicNum].GetComponent<DragDrop>().SkillName = deck[i].skillName;
+                        epicImage[epicNum].GetComponent<DragDrop>().Cooltime = deck[i].Cool;
                         epicNum++;
                     }
                     else if (deck[i].skillGrade == SkillGrade.UNIQUE && deck[i].isTrue == true)
                     {
                         unique[uniqueNum].sprite = deck[i].skillImage;
                         uniqueImage[uniqueNum].gameObject.tag = "InSkill";
-                        uniqueImage[uniqueNum].GetComponent<DragDrop>().SkillNamae = deck[i].skillName;
+                        uniqueImage[uniqueNum].GetComponent<DragDrop>().SkillName = deck[i].skillName;
+                        uniqueImage[uniqueNum].GetComponent<DragDrop>().Cooltime = deck[i].Cool;
                         uniqueNum++;
                     }
                     else if (deck[i].skillGrade == SkillGrade.LEGENDARY && deck[i].isTrue == true)
                     {
                         legendary[legendaryNum].sprite = deck[i].skillImage;
                         legendaryImage[legendaryNum].gameObject.tag = "InSkill";
-                        legendaryImage[legendaryNum].GetComponent<DragDrop>().SkillNamae = deck[i].skillName;
+                        legendaryImage[legendaryNum].GetComponent<DragDrop>().SkillName = deck[i].skillName;
+                        legendaryImage[legendaryNum].GetComponent<DragDrop>().Cooltime = deck[i].Cool;
                         legendaryNum++;
                     }
                 }
             }
         }
+        
     }
     public void ResultSelect()
     {
-        SkillBuyUi.gameObject.SetActive(true);
-        GameManager.Instance.Result.Add(RandomSkill());
+        int isFull = 0;
+        for(int i = 0; i < deck.Count; i++)
+        {
+            if (deck[i].isTrue)
+                isFull++;
+        }
+        if (isFull < deck.Count)
+        {
+            if (GameManager.Instance.Gold >= 100)
+            {
+                SkillBuyUi.gameObject.SetActive(true);
+                Skill n = RandomSkill();
+                SkillBuyImage.sprite = n.skillImage;
+                GameManager.Instance.Result.Add(n);
+                GameManager.Instance.Gold -= 100;
+            }
+        }
     }
 
     public Skill RandomSkill()
@@ -100,7 +131,8 @@ public class RandomSelect : MonoBehaviour
                     GameManager.Instance.nomal = GameManager.Instance.nomal + 1;
                     nomal[nomalNum].sprite = deck[i].skillImage;
                     nomalImage[nomalNum].gameObject.tag = "InSkill";
-                    nomalImage[nomalNum].GetComponent<DragDrop>().SkillNamae = deck[i].skillName; 
+                    nomalImage[nomalNum].GetComponent<DragDrop>().SkillName = deck[i].skillName; 
+                    nomalImage[nomalNum].GetComponent<DragDrop>().Cooltime = deck[i].Cool; 
                     nomalNum++;
                 }
                 else if (deck[i].skillGrade == SkillGrade.EPIC)
@@ -108,7 +140,8 @@ public class RandomSelect : MonoBehaviour
                     GameManager.Instance.epic = GameManager.Instance.epic + 1;
                     epic[epicNum].sprite = deck[i].skillImage;
                     epicImage[epicNum].gameObject.tag = "InSkill";
-                    epicImage[epicNum].GetComponent<DragDrop>().SkillNamae = deck[i].skillName;
+                    epicImage[epicNum].GetComponent<DragDrop>().SkillName = deck[i].skillName;
+                    epicImage[epicNum].GetComponent<DragDrop>().Cooltime = deck[i].Cool; 
                     epicNum++;
                 }
                 else if (deck[i].skillGrade == SkillGrade.UNIQUE)
@@ -116,7 +149,8 @@ public class RandomSelect : MonoBehaviour
                     GameManager.Instance.unique = GameManager.Instance.unique + 1;
                     unique[uniqueNum].sprite = deck[i].skillImage;
                     uniqueImage[uniqueNum].gameObject.tag = "InSkill";
-                    uniqueImage[uniqueNum].GetComponent<DragDrop>().SkillNamae = deck[i].skillName;
+                    uniqueImage[uniqueNum].GetComponent<DragDrop>().SkillName = deck[i].skillName;
+                    uniqueImage[uniqueNum].GetComponent<DragDrop>().Cooltime = deck[i].Cool; 
                     uniqueNum++;
                 }
                 else if (deck[i].skillGrade == SkillGrade.LEGENDARY)
@@ -124,10 +158,10 @@ public class RandomSelect : MonoBehaviour
                     GameManager.Instance.legendary = GameManager.Instance.legendary + 1;
                     legendary[legendaryNum].sprite = deck[i].skillImage;
                     legendaryImage[legendaryNum].gameObject.tag = "InSkill";
-                    legendaryImage[legendaryNum].GetComponent<DragDrop>().SkillNamae = deck[i].skillName;
+                    legendaryImage[legendaryNum].GetComponent<DragDrop>().SkillName = deck[i].skillName;
+                    legendaryImage[legendaryNum].GetComponent<DragDrop>().Cooltime = deck[i].Cool; 
                     legendaryNum++;
                 }
-                Debug.Log(deck[i].skillName);
                 return temp;
             }
         }
@@ -135,6 +169,6 @@ public class RandomSelect : MonoBehaviour
     }
     private void Update()
     {
-
+        GoldUI.text = GameManager.Instance.Gold.ToString();
     }
 }
