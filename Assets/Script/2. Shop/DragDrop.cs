@@ -18,7 +18,13 @@ public class DragDrop : MonoBehaviour, IPointerClickHandler
     {
         if(gameObject.tag == "InSkill" && GameManager.Instance.nameNum < 6)
         {
-            if (eventData.button == PointerEventData.InputButton.Left) {
+            bool isCan = true;
+            for(int i = 0; i < 6; i++)
+            {
+                if (GameManager.Instance.name[i] == SkillName)
+                    isCan = false;
+            }
+            if (eventData.button == PointerEventData.InputButton.Left && isCan) {
                 GameManager.Instance.name[GameManager.Instance.nameNum] = SkillName;
                 GameManager.Instance.CoolTime[GameManager.Instance.nameNum] = Cooltime;
                 //gameObject.tag = "noSkill";

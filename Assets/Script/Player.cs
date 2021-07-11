@@ -37,6 +37,9 @@ public class Player : MonoBehaviour
     [Header("Explosive")]
     [SerializeField] private GameObject Expl_Coll;
 
+    [Header("Kai")]
+    [SerializeField] private GameObject kai_Coll;
+
     [Header("Finish")]
     [SerializeField] private GameObject Finish_IntroVideo;
     [SerializeField] private GameObject Finish_Outrovideo;
@@ -96,6 +99,9 @@ public class Player : MonoBehaviour
             {
                 if (isoutr == true)
                 {
+                    GameManager.Instance.isFinal = false;
+                    GameManager.Instance.isSoundon = true;
+
                     Finish_Outrovideo.SetActive(false);
                     SceneManager.LoadScene("1. Title");
                 }
@@ -158,6 +164,11 @@ public class Player : MonoBehaviour
     public void Explosive()
     {
         animator.SetTrigger("Explosive");
+    }
+
+    public void Kaioken()
+    {
+        animator.SetTrigger("Kai");
     }
 
     public void Finish()
@@ -307,6 +318,16 @@ public class Player : MonoBehaviour
         Expl_Coll.SetActive(true);
     }
 
+    void Kai_PosSet()
+    {
+        transform.position = new Vector2(0, 1);
+    }
+
+    void Kai_Coll()
+    {
+        kai_Coll.SetActive(true);
+    }
+
     void PosZero()
     {
         transform.position = new Vector2(0, transform.position.y);
@@ -326,6 +347,8 @@ public class Player : MonoBehaviour
     {
         Finish_Aura.SetActive(false);
         Finish_Outrovideo.SetActive(true);
+        GameManager.Instance.isSoundon = false;
+        GameManager.Instance.isFinal = true;
     }
 
     void CreateGather_1_Finish()
@@ -439,7 +462,7 @@ public class Player : MonoBehaviour
                 Explosive();
                 break;
             case SKillName.Kaioken:
-
+                Kaioken();
                 break;
             case SKillName.Finish:
                 Finish();
@@ -548,7 +571,7 @@ public class Player : MonoBehaviour
 
     void Limit_Update()
     {
-        if(!GameManager.Instance.Result_Window)
+        if(!GameManager.Instance.Result_Window && !GameManager.Instance.isFinal)
             Limit.fillAmount -= 1 / 30f * Time.deltaTime;
         if (Limit.fillAmount <= 0 && !GameManager.Instance.skillActive && !GameManager.Instance.Result_Window)
         { 

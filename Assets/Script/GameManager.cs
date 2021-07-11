@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
 {
 
     private static GameManager instance = null;
+
+    [SerializeField] AudioSource audio;
+
     public int nomal = 0, epic = 0, unique = 0, legendary = 0;
     public List<Skill> Result = new List<Skill>();
     public SKillName[] name;
@@ -20,6 +23,9 @@ public class GameManager : MonoBehaviour
     public bool BasicSkill = false;
     public bool Result_Window = false;
     public bool skillActive = false;
+    public bool isFinal = false;
+    public bool isSound = true;
+    public bool isSoundon = true;
     //public 
 
     void Awake()
@@ -49,5 +55,16 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab)) Gold += 50;
+        if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
+        if (isSoundon && !isSound)
+        {
+            audio.Play();
+            isSound = true;
+        }
+        else if(!isSoundon && isSound)
+        {
+            audio.Pause();
+            isSound = false;
+        }
     }
 }

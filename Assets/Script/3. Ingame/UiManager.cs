@@ -24,8 +24,8 @@ public class UiManager : MonoBehaviour
     //일시정지 ui
     public void OnClickSound()
     {
-        isSound = !isSound;
-        if (isSound) Sound.sprite = SoundOn;
+        GameManager.Instance.isSoundon = !GameManager.Instance.isSoundon;
+        if (GameManager.Instance.isSoundon) Sound.sprite = SoundOn;
         else Sound.sprite = SoundOff;
     }
     public void OnClickSoundEffect()
@@ -38,6 +38,13 @@ public class UiManager : MonoBehaviour
     {
         isStop = !isStop;
         Stop.gameObject.SetActive(isStop);
+        Time.timeScale = 0;
+    }
+    public void OnClickkeep()
+    {
+        isStop = !isStop;
+        Stop.gameObject.SetActive(isStop);
+        Time.timeScale = 1;
     }
     public void OnClickShop()
     {
